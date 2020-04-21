@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Product Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+  <div class="card text-center" style="height: calc(100vh)">
+    <div class="card-header">
+      <h2>Quản lí sản phẩm <span><button type="button" class="btn btn-success" data-target="#exampleModal"
+            title="Thêm mới" data-toggle="modal" style="float: right"><i class="fa fa-plus-square"></i>&nbsp;Thêm
+            mới</button></span>
+      </h2>
+    </div>
+    <div class="card-body" style="padding: 0 !important; overflow-y: scroll">
+      {{{body}}}
+    </div>
+    <div class="card-footer text-muted">
+      Designed by Xuan Nghiem Nguyen
+    </div>
+  </div>
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sản phẩm mới</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="./products/create" id="form-submit">
+            <div class="form-group">
+              <label for="name">Thông tin chung:</label>
+              <input class="form-control" id="name" name="name" placeholder="Nhập tên sản phẩm" required>
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <input class="form-control" id="brand" name="brand" placeholder="Nhãn hiệu" required>
+                </div>
+                <div class="col">
+                  <input type="text" id="producer" name="producer" class="form-control" placeholder="Nhà sản xuất"
+                    required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Mô tả:</label>
+              <textarea class="form-control" name="description" id="description"></textarea>
+            </div>
+            <div class="form-group row">
+              <label for="price" class="col-sm-2 col-form-label">Giá:</label>
+              <div class="col-sm-8">
+                <input type="number" step="50" class="form-control" name="price" id="price" required>
+              </div>
+              <label for="price" class="col-sm-2 col-form-label">VND</label>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <input type="text" id="imageUrl" name="imageUrl" class="form-control"
+                  placeholder="Nhập đường dẫn hình ảnh" required>
+              </div>
+              <button type="button" onclick="changeImage()" class="col-sm-2 btn btn-info">Test</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <img id="avatar" style="margin: auto" src="https://img.icons8.com/plasticine/2x/product.png"
+            alt="Ảnh sản phẩm" height="100" width="100">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+          <button type="submit" form="form-submit" class="btn btn-primary">Tạo mới</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const changeImage = () => {
+      try {
+        const url = document.getElementById('imageUrl').value
+        if (url) {
+          document.getElementById('avatar').src = url
+        } else {
+          document.getElementById('avatar').src = "https://img.icons8.com/plasticine/2x/product.png"
+        }
+      } catch (err) {
+        console.log(err)
+        document.getElementById('avatar').src = "https://img.icons8.com/plasticine/2x/product.png"
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
