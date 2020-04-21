@@ -5,5 +5,11 @@ XuanNghiemNguyen/BaiTap01-TKPM
 + MSSV: 1612427
 
 Các công nghệ sử dụng trong Project:
-+ Quản lý cơ sở dư liệu: Mongoose (MongoDB)
++ Quản lý cơ sở dữ liệu: Mongoose (MongoDB)
 + Nền tảng Web APP Nodejs (expressjs), View: Handlebars
+
+## Start project:
++ Clone project và đứng ở thư mục `BaiTap01-TKPM`
++ `npm i`
++ `npm start`
++ access to: http://localhost:8080/products
