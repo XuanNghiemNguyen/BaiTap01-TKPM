@@ -9,7 +9,7 @@ Các công nghệ sử dụng trong Project:
 + Nền tảng Web APP Nodejs (expressjs), View: Handlebars
 
 ## Start project:
-+ Clone project và đứng ở thư mục `BaiTap01-TKPM`
++ Clone project và đứng ở thư mục gốc thực hiện các lệnh sau:
 + `npm i`
 + `npm start`
 + access to: http://localhost:8080/products
